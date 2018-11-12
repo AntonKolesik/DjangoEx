@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<h1>Журнал студентов</h1>
+<table>
+    {% for item in data %}
+    <tr>
+        <td><strong>Имя:</strong> {{ item.student.first_name }}</td>
+        <td>Фамилия : {{ item.student.last_name }}</td>
+        <td>Отчество : {{ item.student.middle_name }}</td>
+        <td>Год/Семестр : {{ item.student.year }}</td>
+        <td>Форма обучения : {{ item.student.form_training }}</td>
+        <td>Группа : {{ item.student.group }}</td>
+        <td>Оценка : {{ item.rate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<style>
+    td {
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+}
+</style>

@@ -1,0 +1,16 @@
+{% load static %}
+<h1>Дисциплины - добавить</h1>
+<form method="POST">
+     {% csrf_token %}
+    <input type="text" name="name" placeholder="Название">
+    <select name="spec">
+        {% for item in field %}
+        <option value="{{ item.specialty_id }}">{{ item.specialty_name }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="hour" placeholder="Часов">
+     <input type="text" name="form" placeholder="Форма обучения">
+     <input type="submit" name="submit">
+</form>
+
+<a href="/disp/">Все дисциплины</a>

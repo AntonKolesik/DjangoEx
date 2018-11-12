@@ -1,0 +1,25 @@
+{% load static %}
+<h1>Добавить в журнал</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" required name="rate" placeholder="Оценка">
+    <input type="text" required name="year" placeholder="Год поступления">
+     <select name="info">
+        <option  selected = "selected" value="1">дневная</option>
+    </select>
+
+     <select name="students">
+           {% for item in data %}
+        <option value="{{ item.student_id }}">{{ item.first_name }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="disp">
+           {% for item in disp %}
+        <option value="{{ item.disciplines_id }}">{{ item.disciplines_name }}</option>
+        {% endfor %}
+    </select>
+    <input name="submit" type="submit">
+</form>
+<a href="/journal/">Журнал</a>

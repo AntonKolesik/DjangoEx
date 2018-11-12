@@ -1,0 +1,33 @@
+{% load static %}
+<h1>Дисциплины</h1>
+<table>
+{% for item in data %}
+
+    <tr>
+        <td>ID: {{ item.disciplines_id }}</td>
+        <td>Название дисциплины : {{ item.disciplines_name }}</td>
+        <td>Специальность : {{ item.specialty }}</td>
+        <td>Часов : {{ item.hours }}</td>
+        <td>Форма обучения : {{ item.form }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<style>
+    td {
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+}
+.red {
+    background: red;
+    color: #fff;
+    cursor:pointer;
+}
+
+.green {
+    background: #1eff60;
+    color: #fff;
+    cursor:pointer;
+}
+</style>

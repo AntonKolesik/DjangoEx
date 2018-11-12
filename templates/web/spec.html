@@ -1,0 +1,30 @@
+{% load static %}
+<h1>Специальности</h1>
+<table>
+{% for item in data %}
+
+    <tr>
+        <td>ID: {{ item.specialty_id }}</td>
+        <td>Название : {{ item.specialty_name }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<style>
+    td {
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+}
+.red {
+    background: red;
+    color: #fff;
+    cursor:pointer;
+}
+
+.green {
+    background: #1eff60;
+    color: #fff;
+    cursor:pointer;
+}
+</style>

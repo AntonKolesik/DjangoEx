@@ -1,0 +1,9 @@
+{% load static %}
+<h1>Специальности - добавить</h1>
+<form method="POST">
+     {% csrf_token %}
+    <input type="text" name="name" value="Название">
+     <input type="submit" name="submit">
+</form>
+
+<a href="/spec/">Все специальности</a>
